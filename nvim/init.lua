@@ -10,6 +10,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.opt.autowrite = true
 
+vim.keymap.set('n', '<leader>jq', ':%!jq .<CR>', { desc = 'Format JSON with jq' })
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
