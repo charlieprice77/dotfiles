@@ -76,10 +76,10 @@ if ! grep -q '^shell ' "$HOME/.config/kitty/kitty.conf"; then
     echo "shell $(command -v zsh)" >> "$HOME/.config/kitty/kitty.conf"
 fi
 
-echo "==> Configuring tmux to use zsh..."
-TMUX_CONF="$HOME/.tmux.conf"
-if ! grep -q 'default-shell' "$TMUX_CONF" 2>/dev/null; then
-    echo "set-option -g default-shell $(command -v zsh)" >> "$TMUX_CONF"
+echo "==> Configuring tmux..."
+cp "$DOTFILES_DIR/tmux.conf" "$HOME/.tmux.conf"
+if ! grep -q 'default-shell' "$HOME/.tmux.conf" 2>/dev/null; then
+    echo "set-option -g default-shell $(command -v zsh)" >> "$HOME/.tmux.conf"
 fi
 
 echo "==> Setting default login shell to zsh..."
