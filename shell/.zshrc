@@ -17,3 +17,5 @@ alias l='ls -CF'
 # ~/.bash_aliases, instead of adding them here directly.
 alias west-ncs='nrfutil toolchain-manager launch --ncs-version v3.1.0 -- west'
 alias west-321='nrfutil toolchain-manager launch --ncs-version v3.2.1 -- west'
+
+export PATH="$HOME/.npm-global/bin:$PATH"
